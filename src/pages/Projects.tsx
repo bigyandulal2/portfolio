@@ -4,12 +4,7 @@ import { useState } from 'react';
 import { FiArrowLeft, FiArrowRight, FiExternalLink, FiGithub } from 'react-icons/fi';
 import PageTransition from '@/components/PageTransition';
 // Assuming these asset imports are correct
-import BhokExpress from '@/assets/BhokExpress.png';
-import projectDashboard from '@/assets/project-dashboard.jpg';
-import projectTaskManager from '@/assets/project-taskmanager.jpg';
-import projectAi from '@/assets/project-ai.jpg';
-import projectWeather from '@/assets/project-weather.jpg';
-import projectPortfolio from '@/assets/project-portfolio.jpg';
+
 
 // --- CONFIGURATION ---
 const PRIMARY_BG_COLOR = 'bg-gradient-to-br from-teal-800 to-teal-900';
@@ -32,7 +27,7 @@ const Projects = () => {
       description: 'A full-stack e-commerce solution with real-time inventory, payment processing, map features, and admin dashboard.',
       fullDescription: 'Built with Next.js and MongoDB, this platform handles thousands of products with a seamless checkout experience, real-time inventory tracking, and comprehensive analytics. Integrates KhaltiPayment for local transactions.',
       tags: ['Next.js', 'Tailwind CSS', 'MongoDB', 'KhaltiPayment'],
-      image: BhokExpress,
+      image: "https://res.cloudinary.com/dlbgw3fwo/image/upload/v1761633300/bhooo_xf0oed.png",
       link: "https://bhokexpress.com/",
       github: '#', 
     },

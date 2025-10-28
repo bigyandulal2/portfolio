@@ -11,6 +11,7 @@ import Contact from "./pages/Contact";
 import Resume from "./pages/Resume";
 import NotFound from "./pages/NotFound";
 import "@/App.css";
+import Certificates from "./pages/Certificates";
 const queryClient = new QueryClient();
 
 function AnimatedRoutes() {
@@ -24,6 +25,7 @@ function AnimatedRoutes() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/resume" element={<Resume />} />
+        <Route path="/certificates" element={<Certificates />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </AnimatePresence>
