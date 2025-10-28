@@ -29,7 +29,25 @@ const Projects = () => {
       tags: ['Next.js', 'Tailwind CSS', 'MongoDB', 'KhaltiPayment'],
       image: "https://res.cloudinary.com/dlbgw3fwo/image/upload/v1761633300/bhooo_xf0oed.png",
       link: "https://bhokexpress.com/",
-      github: '#', 
+    },
+    {
+      id: 2,
+      title: 'Global Medilab',
+      description: 'A full stack web for selling medicines online',
+      fullDescription: 'Built with React.js and Django along with Postgre sql, i assisted in building User interface using react and tailwind css',
+      tags: ['React.js', 'Tailwind CSS', 'PostgreSql', 'Django'],
+      image: "https://res.cloudinary.com/dlbgw3fwo/image/upload/v1761633763/gmls_xbrd9s.png",
+      link: "https://gmls.com.np/",
+    
+    },
+    {
+      id: 3,
+      title: 'Rotary Damak',
+      description: 'A non profit organization that provides contribution and unite people for humanity',
+      fullDescription: 'Built with React.js and Django, I contributed in building Some sections of the ui with other peers',
+      tags: ['React.js', 'Bootstrap', 'postgreSql', 'Django'],
+      image: "https://res.cloudinary.com/dlbgw3fwo/image/upload/v1761633775/rotary_infnee.png",
+      link: "https://rotarydamak.org.np/",
     },
   ];
 
