@@ -148,7 +148,7 @@ const About = () => {
               I thrive on bringing ideas to life, transforming complex challenges into elegant solutions. For me, development isn't just about lines of code; it's about crafting intuitive interfaces and robust backends that truly make a difference.
             </motion.p>
             <motion.p variants={itemVariants} className={`text-lg ${TEXT_COLOR_DIM} leading-relaxed`}>
-              Every project is an opportunity to learn, innovate, and create something exceptional. I focus on **clean architecture, optimal performance, and user-centric design**, ensuring every digital product I touch is a step above.
+              Every project is an opportunity to learn, innovate, and create something exceptional. I focus on clean architecture, optimal performance, and user-centric design, ensuring every digital product I touch is a step above.
             </motion.p>
           </div>
 
