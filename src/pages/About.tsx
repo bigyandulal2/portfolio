@@ -125,7 +125,7 @@ const About = () => {
               variants={itemVariants}
               className="text-center"
             >
-              <div className={`text-6xl font-extrabold mb-2 ${ACCENT_COLOR_RED}`}>{stat.number}</div>
+              <div className={` text-2xl md:text-6xl font-extrabold mb-2 ${ACCENT_COLOR_RED}`}>{stat.number}</div>
               <div className={`text-base sm:text-lg ${TEXT_COLOR_DIM} font-medium uppercase tracking-wider`}>{stat.label}</div>
             </motion.div>
           ))}
@@ -141,8 +141,8 @@ const About = () => {
         >
           {/* My Philosophy / Story */}
           <div className="space-y-8">
-            <motion.h2 variants={itemVariants} className={`text-3xl font-bold mb-4 ${TEXT_COLOR_LIGHT} flex items-center gap-4`}>
-              <FiTarget className={`w-7 h-7 ${ACCENT_COLOR_RED}`} /> My Drive & Philosophy
+            <motion.h2 variants={itemVariants} className={`text-3xl font-bold mb-4 ${TEXT_COLOR_LIGHT} flex flex-col md:flex-row items-center gap-4`}>
+              <FiTarget className={`${ACCENT_COLOR_RED} text-center`} /> My Drive & Philosophy
             </motion.h2>
             <motion.p variants={itemVariants} className={`text-lg ${TEXT_COLOR_DIM} leading-relaxed`}>
               I thrive on bringing ideas to life, transforming complex challenges into elegant solutions. For me, development isn't just about lines of code; it's about crafting intuitive interfaces and robust backends that truly make a difference.
@@ -181,7 +181,7 @@ const About = () => {
           className="text-center mt-16"
         >
           <p className={`text-xl ${TEXT_COLOR_DIM} mb-8 font-medium`}>Ready to build something impactful?</p>
-          <div className="flex justify-center gap-6">
+          <div className="flex flex-col md:flex-row justify-center gap-6">
             <motion.button
               onClick={() => navigate('/projects')}
               className={`inline-flex items-center gap-3 px-10 py-5 ${ACCENT_COLOR_RED_BG} ${TEXT_COLOR_LIGHT} font-semibold text-lg rounded-full shadow-2xl ${ACCENT_COLOR_RED_HOVER_BG} transition-all focus:outline-none focus:ring-4 focus:ring-rose-400 focus:ring-opacity-50`}

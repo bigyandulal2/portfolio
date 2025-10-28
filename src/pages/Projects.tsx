@@ -92,7 +92,7 @@ const Projects = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mb-8 text-center"
           >
-            <h1 className={`text-3xl md:text-5xl font-extrabold mb-4 ${TEXT_COLOR_LIGHT}`}>
+            <h1 className={`text-4xl md:text-5xl font-extrabold mb-4 ${TEXT_COLOR_LIGHT}`}>
               My <span className={ACCENT_COLOR_RED}>Works</span>
             </h1>
             <p className={`text-xl ${TEXT_COLOR_DIM} max-w-3xl mx-auto font-medium`}>
