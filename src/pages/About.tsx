@@ -76,7 +76,7 @@ const About: React.FC = () => {
         >
           <motion.button
             onClick={() => navigate('/')}
-            className={`flex items-center gap-2 ${TEXT_COLOR_DIM} hover:${TEXT_COLOR_LIGHT} transition-colors p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400`}
+            className={`flex items-center gap-2 ${TEXT_COLOR_DIM}  transition-colors p-3  focus:outline-none focus:ring-2 focus:ring-gray-400`}
             whileHover={{ x: -8 }}
           >
             <FiArrowLeft className="w-5 h-5" />

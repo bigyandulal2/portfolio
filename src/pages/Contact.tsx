@@ -88,14 +88,14 @@ const Contact = () => {
           >
             <Link to="/projects">
               <motion.button
-                className="flex items-center gap-2 text-gray-200 hover:text-indigo-500 transition-all"
+                className="flex items-center gap-2 text-white hover:text-pink-500 transition-all"
                 whileHover={{ x: -5 }}
               >
                 <FiArrowLeft /> Back
               </motion.button>
             </Link>
             <Link to="/">
-              <motion.button className="text-gray-200 hover:text-indigo-500 transition-all">
+              <motion.button className="text-gray-200 hover:text-pink-500 transition-all">
                 Home
               </motion.button>
             </Link>
@@ -179,7 +179,7 @@ const Contact = () => {
                 className="space-y-8"
               >
                 {/* Quick Contact Card */}
-                <div className="bg-gray-800 border border-gray-700 rounded-3xl p-8 shadow-lg hover:border-indigo-500 transition-colors">
+                <div className="bg-gray-800 border border-gray-700 rounded-3xl p-8 shadow-lg hover:border-pink-500 transition-colors">
                   <h3 className="text-2xl font-bold mb-6 text-pink-500">Get in Touch</h3>
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-indigo-600/20 rounded-full flex items-center justify-center text-indigo-400">
@@ -193,7 +193,7 @@ const Contact = () => {
                 </div>
 
                 {/* Social Links Card */}
-                <div className="bg-gray-800 border border-gray-700 rounded-3xl p-8 shadow-lg hover:border-indigo-500 transition-colors">
+                <div className="bg-gray-800 border border-gray-700 rounded-3xl p-8 shadow-lg hover:border-pink-500 transition-colors">
                   <h3 className="text-2xl font-bold mb-6 text-pink-500">Follow Me</h3>
                   <div className="grid grid-cols-2 gap-4">
                     {socialLinks.map(({ Icon, href, label }, index) => (

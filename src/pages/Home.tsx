@@ -1,9 +1,8 @@
 import { motion } from 'framer-motion';
 import { FiArrowRight, FiLinkedin, FiMail } from 'react-icons/fi';
-import { FaGithub } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import PageTransition from '@/components/PageTransition';
-
+import { FiGithub } from "react-icons/fi";
 const Home = () => {
   return (
     <PageTransition>
@@ -41,7 +40,7 @@ const Home = () => {
             >
               <div className="inline-block">
                 <motion.div
-                  className="text-lg font-medium text-yellow-600 mb-2  uppercase"
+                  className="text-lg font-medium text-pink-500 mb-2  uppercase"
                   animate={{ opacity: [0.5, 1, 0.5] }}
                   transition={{ duration: 3, repeat: Infinity }}
                 >
@@ -78,7 +77,7 @@ const Home = () => {
               <Link to="/about">
                 <motion.button
                   className="group px-8 py-4 bg-pink-500 text-primary-foreground rounded-full font-semibold text-lg inline-flex items-center gap-3 overflow-hidden relative"
-                  whileHover={{ scale: 1.05 }}
+                  whileHover={{ scale: 1.05, boxShadow: '0 12px 24px rgba(244, 63, 94, 0.5)' }}
                   whileTap={{ scale: 0.95 }}
                 >
                   <span className="relative z-10">Explore My Story</span>
@@ -100,8 +99,9 @@ const Home = () => {
 
               <Link to="/contact">
                 <motion.button
-                  className="px-8 py-4 bg-white text-rose-500   rounded-full font-semibold text-lg   transition-all"
-                  whileHover={{ scale: 1.05 }}
+                  className="px-8 py-4 bg-white text-pink-500    rounded-full font-semibold text-lg   transition-all"
+                  whileHover={{ scale: 1.05, boxShadow: '0 12px 24px rgba(255, 255, 255, 0.3)' }}
+                  
                   whileTap={{ scale: 0.95 }}
                 >
                   Let's Connect
@@ -116,9 +116,9 @@ const Home = () => {
               className="flex items-center justify-center gap-6"
             >
               {[
-                { Icon: FaGithub, href: 'https://github.com/bigyandulal2', label: 'github',css:"bg-white text-black" },
-                { Icon: FiLinkedin, href: 'https://www.linkedin.com/in/bigyan-dulal-84548b302/', label: 'LinkedIn',css:"bg-blue-600 text-white" },
-                { Icon: FiMail, href: 'mailto:rdravid569@gmail.com', label: 'Email',css:"bg-white text-red-600" },
+                { Icon: FiGithub, href: 'https://github.com/bigyandulal2', label: 'github',css:"text-gray-300" },
+                { Icon: FiLinkedin, href: 'https://www.linkedin.com/in/bigyan-dulal-84548b302/', label: 'LinkedIn',css:" text-gray-300" },
+                { Icon: FiMail, href: 'mailto:rdravid569@gmail.com', label: 'Email',css:" text-gray-300" },
               ].map(({ Icon, href, label,css }) => {
                   
                 return <motion.a
@@ -126,7 +126,7 @@ const Home = () => {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={` w-12 h-12 flex items-center justify-center ${css} border border-border rounded-full text-xl hover:border-primary  transition-all`}
+                  className={` flex items-center justify-center ${css} b text-xl hover:border-primary hover:text-pink-500  transition-all`}
                   whileHover={{ scale: 1.1, y: -5 }}
                   whileTap={{ scale: 0.9 }}
                   aria-label={label}
@@ -139,29 +139,6 @@ const Home = () => {
         </div>
 
         {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.2 }}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="text-muted-foreground text-sm"
-          >
-            <div className="flex flex-col items-center gap-2">
-              <span className="text-xs uppercase tracking-widest">Scroll to explore</span>
-              <div className="w-6 h-10 border-2 border-current rounded-full flex items-start justify-center p-2">
-                <motion.div
-                  className="w-1 h-2 bg-current rounded-full"
-                  animate={{ y: [0, 12, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
-                />
-              </div>
-            </div>
-          </motion.div>
-        </motion.div>
       </div>
     </PageTransition>
   );

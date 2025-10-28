@@ -38,8 +38,8 @@ const Resume = () => {
   ];
 
   const education = [
-    { degree: "B.Sc. in Computer Science", institution: "Tribhuvan University", duration: "2019 - 2023" },
-    { degree: "High School", institution: "Panchayat College", duration: "2017-2020" },
+    { degree: "B.Sc. in Computer Science & Information Technology", institution: "Tribhuvan University", duration: "2019 - 2023" },
+    { degree: "High School", institution: "Panchayat College", duration: "2017 - 2020" },
   ];
 
   return (
@@ -55,7 +55,7 @@ const Resume = () => {
           >
             <Link to="/projects">
               <motion.button
-                className="flex items-center gap-2 text-gray-200 hover:text-indigo-500 transition-all"
+                className="flex items-center gap-2 text-gray-200 hover:text-pink-500 transition-all"
                 whileHover={{ x: -5 }}
               >
                 <FiArrowLeft /> Back
@@ -64,7 +64,7 @@ const Resume = () => {
             <a
               href="/resume.pdf" // replace with your actual resume PDF
               download
-              className="flex items-center gap-2 text-gray-200 hover:text-indigo-500 transition-all"
+              className="flex items-center gap-2 text-gray-200 hover:text-pink-500 transition-all"
             >
               <FiDownload /> Download Resume
             </a>
@@ -93,7 +93,7 @@ const Resume = () => {
             >
               {/* Profile */}
               <div className="bg-gray-800 p-6 rounded-3xl shadow-lg">
-                <h3 className="text-xl font-bold mb-4 text-indigo-500">Profile</h3>
+                <h3 className="text-xl font-bold mb-4 text-pink-500">Profile</h3>
                 <p className="text-gray-300">
                   Passionate Frontend Developer with experience in building responsive and interactive web applications using React, TypeScript, and Tailwind CSS.
                 </p>
@@ -101,7 +101,7 @@ const Resume = () => {
 
               {/* Skills */}
               <div className="bg-gray-800 p-6 rounded-3xl shadow-lg">
-                <h3 className="text-xl font-bold mb-4 text-indigo-500">Skills</h3>
+                <h3 className="text-xl font-bold mb-4 text-pink-500">Skills</h3>
                 <ul className="text-gray-300 list-disc list-inside space-y-1">
                   <li>React, Next.js, TypeScript</li>
                   <li>Tailwind CSS, Framer Motion</li>
@@ -113,7 +113,7 @@ const Resume = () => {
 
               {/* Social Links */}
               <div className="bg-gray-800 p-6 rounded-3xl shadow-lg">
-                <h3 className="text-xl font-bold mb-4 text-indigo-500">Connect</h3>
+                <h3 className="text-xl font-bold mb-4 text-pink-500">Connect</h3>
                 <div className="flex flex-col gap-3">
                   {socialLinks.map(({ Icon, href, label }) => (
                     <a
@@ -121,7 +121,7 @@ const Resume = () => {
                       href={href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-3 p-3 bg-gray-900 rounded-xl hover:border-indigo-500 border border-gray-700 transition-colors text-gray-100"
+                      className="flex items-center gap-3 p-3 bg-gray-900 rounded-xl border hover:border-pink-500 transition-colors text-blue-100"
                     >
                       <Icon className="text-2xl" />
                       {label}
@@ -140,7 +140,7 @@ const Resume = () => {
             >
               {/* Experience */}
               <div className="bg-gray-800 p-6 rounded-3xl shadow-lg">
-                <h3 className="text-xl font-bold mb-6 text-indigo-500">Experience</h3>
+                <h3 className="text-xl font-bold mb-6 text-pink-500">Experience</h3>
                 <div className="space-y-6">
                   {experiences.map((exp, idx) => (
                     <div key={idx}>
@@ -158,7 +158,7 @@ const Resume = () => {
                                 href={item.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-indigo-400 hover:underline"
+                                className="text-pink-500 hover:underline"
                               >
                                 {item.label}
                               </a>
@@ -173,7 +173,7 @@ const Resume = () => {
 
               {/* Education */}
               <div className="bg-gray-800 p-6 rounded-3xl shadow-lg">
-                <h3 className="text-xl font-bold mb-6 text-indigo-500">Education</h3>
+                <h3 className="text-xl font-bold mb-6 text-pink-500">Education</h3>
                 <div className="space-y-4">
                   {education.map((edu, idx) => (
                     <div key={idx}>

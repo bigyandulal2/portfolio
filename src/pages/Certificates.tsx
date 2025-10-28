@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 const PRIMARY_BG_COLOR = 'bg-gradient-to-br from-teal-800 to-teal-900';
 const TEXT_COLOR_LIGHT = 'text-white';
 const TEXT_COLOR_DIM = 'text-gray-300';
-const ACCENT_COLOR_RED = 'text-rose-500';
+const ACCENT_COLOR_RED = 'text-pink-500';
 const ACCENT_COLOR_RED_BG = 'bg-rose-500';
 const ACCENT_COLOR_RED_HOVER_BG = 'hover:bg-rose-600';
 
@@ -63,20 +63,20 @@ const Certificates: React.FC = () => {
         >
           <motion.button
             onClick={() => navigate('/about')}
-            className={`flex items-center gap-2 ${TEXT_COLOR_DIM} hover:${TEXT_COLOR_LIGHT} transition-colors p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400`}
+            className={`flex items-center hover:text-pink-500 gap-2 ${TEXT_COLOR_DIM} hover:${TEXT_COLOR_LIGHT} transition-colors p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400`}
             whileHover={{ x: -8 }}
           >
             <FiArrowLeft className="w-5 h-5" />
-            <span className="text-base font-semibold">Back to About</span>
+            <span className="text-base font-semibold "> About</span>
           </motion.button>
 
           <motion.button
             onClick={() => navigate('/projects')}
-            className={`flex items-center gap-2 ${TEXT_COLOR_DIM} hover:${TEXT_COLOR_LIGHT} transition-colors p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400`}
+            className={`flex items-center gap-2 hover:text-pink-500 ${TEXT_COLOR_DIM} hover:${TEXT_COLOR_LIGHT} transition-colors p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400`}
             whileHover={{ x: 8 }}
           >
-            <span className="text-base font-semibold">Projects</span>
-            <FiArrowRight className="w-5 h-5" />
+            <span className="text-base font-semibold ">Projects</span>
+            <FiArrowRight className="w-5 h-5 " />
           </motion.button>
         </motion.nav>
 
@@ -113,7 +113,7 @@ const Certificates: React.FC = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              whileHover={{ scale: 1.03, boxShadow: '0 10px 20px rgba(0,0,0,0.3)' }}
+              whileHover={{ scale: 1.05, boxShadow: '0 12px 24px rgba(255, 255, 255, 0.3)' }}
               className="bg-black bg-opacity-30 border border-teal-700 rounded-xl overflow-hidden shadow-2xl backdrop-blur-sm transition-all"
             >
               <div className="relative group overflow-hidden">
@@ -143,7 +143,7 @@ const Certificates: React.FC = () => {
           </p>
           <motion.button
             onClick={() => navigate('/resume')}
-            className={`inline-flex items-center gap-3 px-10 py-5 ${ACCENT_COLOR_RED_BG} ${TEXT_COLOR_LIGHT} font-semibold text-lg rounded-full shadow-2xl ${ACCENT_COLOR_RED_HOVER_BG} transition-all focus:outline-none focus:ring-4 focus:ring-rose-400 focus:ring-opacity-50`}
+            className={`inline-flex items-center  gap-3 px-10 py-5  font-semibold text-lg rounded-full shadow-2xl  transition-all focus:outline-none focus:ring-4 focus:ring-rose-400 focus:ring-opacity-50 bg-pink-500`}
             whileHover={{ scale: 1.05, boxShadow: '0 12px 24px rgba(244, 63, 94, 0.5)' }}
             whileTap={{ scale: 0.95 }}
           >

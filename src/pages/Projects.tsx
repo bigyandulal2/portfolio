@@ -25,8 +25,8 @@ const Projects = () => {
       id: 1,
       title: 'Bhok express',
       description: 'A full-stack e-commerce solution with real-time inventory, payment processing, map features, and admin dashboard.',
-      fullDescription: 'Built with Next.js and MongoDB, this platform handles thousands of products with a seamless checkout experience, real-time inventory tracking, and comprehensive analytics. Integrates KhaltiPayment for local transactions.',
-      tags: ['Next.js', 'Tailwind CSS', 'MongoDB', 'KhaltiPayment'],
+      fullDescription: 'Built with Next.js and MongoDB, this platform handles thousands of products with a seamless checkout experience, real-time inventory tracking, and comprehensive analytics. Integrates Khalti Payment for local transactions.',
+      tags: ['Next.js', 'Tailwind CSS', 'MongoDB', 'Khalti Payment'],
       image: "https://res.cloudinary.com/dlbgw3fwo/image/upload/v1761633300/bhooo_xf0oed.png",
       link: "https://bhokexpress.com/",
     },
@@ -82,7 +82,7 @@ const Projects = () => {
           >
             <Link to="/about">
               <motion.button
-                className={`flex items-center gap-2 ${TEXT_COLOR_DIM} hover:${ACCENT_COLOR_RED} transition-colors p-2 rounded-md`}
+                className={`flex items-center gap-2 hover:text-pink-500 transition-colors p-2 rounded-md`}
                 whileHover={{ x: -8 }}
               >
                 <FiArrowLeft className='w-5 h-5' /> <span className='font-medium'>About Me</span>
@@ -90,7 +90,7 @@ const Projects = () => {
             </Link>
             <Link to="/contact">
               <motion.button
-                className={`flex items-center gap-2 ${TEXT_COLOR_DIM} hover:${ACCENT_COLOR_RED} transition-colors p-2 rounded-md`}
+                className={`flex items-center gap-2 hover:text-pink-500 transition-colors p-2 rounded-md`}
                 whileHover={{ x: 8 }}
               >
                 <span className='font-medium'>Contact</span> <FiArrowRight className='w-5 h-5' />
@@ -106,7 +106,7 @@ const Projects = () => {
             className="mb-8 text-center"
           >
             <h1 className={`text-4xl md:text-5xl font-extrabold mb-4 ${TEXT_COLOR_LIGHT}`}>
-              My <span className={ACCENT_COLOR_RED}>Works</span>
+              My <span className='text-pink-500'>Works</span>
             </h1>
             <p className={`text-xl ${TEXT_COLOR_DIM} max-w-3xl mx-auto font-medium`}>
               A showcase of my recent work, highlighting projects that push the limits of modern full-stack development.
@@ -127,7 +127,7 @@ const Projects = () => {
                 onClick={() => setSelectedProject(project)}
                 className="group cursor-pointer h-full"
               >
-                <div className={`relative ${CARD_BG_COLOR} border ${BORDER_COLOR} rounded-2xl overflow-hidden h-full flex flex-col hover:border-rose-500 transition-all duration-300 hover:shadow-2xl hover:shadow-rose-900/40`}>
+                <div className={`relative ${CARD_BG_COLOR} border  rounded-2xl overflow-hidden h-full flex flex-col hover:border-pink-500 transition-all duration-300 hover:shadow-2xl hover:shadow-rose-900/40`}>
                   
                   {/* Image */}
                   <div className="relative h-64 overflow-hidden">
@@ -146,7 +146,7 @@ const Projects = () => {
                       transition={{ duration: 0.3 }}
                       className="absolute inset-0 bg-black/80 flex items-center justify-center"
                     >
-                      <div className={`${ACCENT_COLOR_RED} text-xl font-bold border-2 border-rose-500 p-3 rounded-lg`}>
+                      <div className={` text-xl font-bold border-2 border-pink-500 p-3 rounded-lg text-pink-500`}>
                         View Details
                       </div>
                     </motion.div>
@@ -154,7 +154,7 @@ const Projects = () => {
 
                   {/* Content */}
                   <div className="p-6 flex flex-col flex-grow">
-                    <h3 className={`text-2xl font-bold mb-3 ${TEXT_COLOR_LIGHT} group-hover:${ACCENT_COLOR_RED} transition-colors`}>
+                    <h3 className={`text-2xl font-bold mb-3`}>
                       {project.title}
                     </h3>
                     <p className={`text-base ${TEXT_COLOR_DIM} mb-4 leading-relaxed flex-grow`}>
@@ -202,7 +202,7 @@ const Projects = () => {
                     />
                     <button
                       onClick={() => setSelectedProject(null)}
-                      className="absolute top-4 right-4 w-10 h-10 bg-black/60 backdrop-blur-sm rounded-full flex items-center justify-center text-xl hover:bg-rose-500 transition-all text-white"
+                      className="absolute top-4 right-4 w-10 h-10 bg-black/60 backdrop-blur-sm rounded-full flex items-center justify-center text-xl hover:bg-pink-500 transition-all text-white"
                       aria-label="Close project details"
                     >
                       ×
@@ -210,7 +210,7 @@ const Projects = () => {
                   </div>
                   
                   <div className="p-8">
-                    <h2 className={`text-4xl font-bold mb-4 ${ACCENT_COLOR_RED}`}>
+                    <h2 className={`text-4xl font-bold mb-4 text-pink-500`}>
                       {selectedProject.title}
                     </h2>
                     <p className={`text-lg ${TEXT_COLOR_DIM} mb-6 leading-relaxed`}>
@@ -221,7 +221,7 @@ const Projects = () => {
                       {selectedProject.tags.map((tag) => (
                         <span
                           key={tag}
-                          className={`px-4 py-2 bg-teal-700/60 border border-teal-500 rounded-full font-medium text-sm ${TEXT_COLOR_LIGHT}`}
+                          className={`px-4 py-2 bg-teal-700 border border-teal-500 rounded-full font-medium text-sm ${TEXT_COLOR_LIGHT}`}
                         >
                           {tag}
                         </span>
@@ -236,7 +236,7 @@ const Projects = () => {
                         whileTap={{ scale: 0.95 }}
                         target='_blank'
                         rel='noopener noreferrer'
-                        className={`flex-1 px-6 py-4 ${ACCENT_COLOR_RED_BG} ${TEXT_COLOR_LIGHT} rounded-full font-semibold inline-flex items-center justify-center gap-3 transition-colors ${ACCENT_COLOR_RED_HOVER_BG} shadow-lg shadow-rose-900/50`}
+                        className={`flex-1 px-6 py-4  rounded-full font-semibold inline-flex items-center justify-center gap-3 transition-colors  shadow-lg shadow-rose-900/50 bg-pink-500`}
                       >
                         View Live <FiExternalLink />
                       </motion.a>
