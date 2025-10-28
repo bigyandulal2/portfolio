@@ -1,21 +1,78 @@
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { FiArrowLeft, FiSend, FiMail, FiGithub, FiLinkedin } from 'react-icons/fi';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { FiArrowLeft, FiSend, FiMail, FiGithub, FiLinkedin } from "react-icons/fi";
 import { BsTwitterX } from "react-icons/bs";
-import PageTransition from '@/components/PageTransition';
-import { toast } from 'sonner';
-
+import PageTransition from "@/components/PageTransition";
+import { toast } from "sonner";
+import emailjs from "@emailjs/browser";
+import { isValidEmail } from "@/lib/validation";
+type User={
+  name:string,
+  email:string,
+  subject:string,
+  message:string
+}
 const Contact = () => {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  // --- Form state ---
+  const [formData, setFormData] = useState<User>({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const [isSending, setIsSending] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // --- Form submit ---
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast.success("Message sent successfully!");
+
+    // Validation
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+      toast.error("Please fill all fields.");
+      return;
+    }
+
+    if (!isValidEmail(formData.email)) {
+      toast.error("Please enter a valid email.");
+      return;
+    }
+
+    setIsSending(true);
+
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        import.meta.env.VITE_EMAILJS_USER_ID
+      );
+
+      toast.success("Message sent successfully!");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      console.error(error);
+      toast.error("Failed to send message. Please try again later.");
+    } finally {
+      setIsSending(false);
+    }
   };
 
   const socialLinks = [
-    { Icon: FiGithub, href: 'https://github.com/bigyandulal2', label: 'GitHub' },
-    { Icon: FiLinkedin, href: 'https://www.linkedin.com/in/bigyan-dulal-84548b302/', label: 'LinkedIn' },
-    { Icon: BsTwitterX, href: 'https://x.com/OrangeP96727', label: 'Twitter' },
-    { Icon: FiMail, href: 'mailto:rdravid569@gmail.com', label: 'Email' },
+    { Icon: FiGithub, href: "https://github.com/bigyandulal2", label: "GitHub" },
+    { Icon: FiLinkedin, href: "https://www.linkedin.com/in/bigyan-dulal-84548b302/", label: "LinkedIn" },
+    { Icon: BsTwitterX, href: "https://x.com/OrangeP96727", label: "Twitter" },
+    { Icon: FiMail, href: "mailto:rdravid569@gmail.com", label: "Email" },
   ];
 
   return (
@@ -69,15 +126,18 @@ const Contact = () => {
               >
                 <div className="bg-gray-800 border border-gray-700 rounded-3xl p-6 shadow-xl">
                   <form onSubmit={handleSubmit} className="space-y-6">
-                    {[ 
-                      { label: "Your Name", type: "text", placeholder: "Peter Parker" },
-                      { label: "Email Address", type: "email", placeholder: "peter@gmail.com" },
-                      { label: "Subject", type: "text", placeholder: "Project Inquiry" },
-                    ].map(({ label, type, placeholder }) => (
+                    {[
+                      { label: "Your Name", type: "text", placeholder: "Peter Parker", name: "name" },
+                      { label: "Email Address", type: "email", placeholder: "peter@gmail.com", name: "email" },
+                      { label: "Subject", type: "text", placeholder: "Project Inquiry", name: "subject" },
+                    ].map(({ label, type, placeholder, name }) => (
                       <div key={label}>
                         <label className="block text-sm font-semibold mb-2 text-gray-200">{label}</label>
                         <input
                           type={type}
+                          name={name}
+                          value={(formData as any)[name]}
+                          onChange={handleChange}
                           required
                           placeholder={placeholder}
                           className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-xl focus:outline-none focus:border-indigo-500 transition-colors text-gray-100 placeholder-gray-500"
@@ -89,6 +149,9 @@ const Contact = () => {
                       <label className="block text-sm font-semibold mb-2 text-gray-200">Message</label>
                       <textarea
                         rows={6}
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
                         required
                         placeholder="Tell me about your project..."
                         className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-xl focus:outline-none focus:border-indigo-500 transition-colors resize-none text-gray-100 placeholder-gray-500"
@@ -97,17 +160,18 @@ const Contact = () => {
 
                     <motion.button
                       type="submit"
+                      disabled={isSending}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="w-full px-8 py-4 bg-indigo-600 text-white rounded-full font-semibold text-lg flex items-center justify-center gap-2 shadow-lg hover:bg-indigo-700 transition-colors"
+                      className="w-full px-8 py-4 bg-indigo-600 text-white rounded-full font-semibold text-lg flex items-center justify-center gap-2 shadow-lg hover:bg-indigo-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      Send Message <FiSend />
+                      {isSending ? "Sending..." : "Send Message"} <FiSend />
                     </motion.button>
                   </form>
                 </div>
               </motion.div>
 
-              {/* Contact Info */}
+              {/* Contact Info & Social Links */}
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -151,23 +215,6 @@ const Contact = () => {
                     ))}
                   </div>
                 </div>
-
-                {/* CTA Card */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.8 }}
-                  className="bg-indigo-600 rounded-3xl p-8 text-center shadow-lg"
-                >
-                  <h3 className="text-2xl font-bold mb-4 text-white">Ready to Start?</h3>
-                  <p className="text-white/90 mb-6">
-                    Let's bring your vision to life with cutting-edge technology and creative excellence.
-                  </p>
-                  <div className="inline-flex items-center gap-2 text-white font-semibold">
-                    <div className="w-3 h-3 bg-white rounded-full animate-pulse" />
-                    Available for new projects
-                  </div>
-                </motion.div>
               </motion.div>
             </div>
           </div>
