@@ -26,7 +26,7 @@ const Resume = () => {
     {
       title: "Web Developer Intern",
       company: "Acee Solution",
-      duration: "May 2025 - Aug 2025",
+      duration: "May 2025 - Sep 2025",
       responsibilities: [
         "Assisted in developing websites with React and Tailwind CSS.",
         "Worked on projects for:",
@@ -39,7 +39,7 @@ const Resume = () => {
 
   const education = [
     { degree: "B.Sc. in Computer Science", institution: "Tribhuvan University", duration: "2019 - 2023" },
-    { degree: "High School", institution: "Panchayat College", duration: "2019" },
+    { degree: "High School", institution: "Panchayat College", duration: "2017-2020" },
   ];
 
   return (
