@@ -178,7 +178,7 @@ const Resume = () => {
                   {education.map((edu, idx) => (
                     <div key={idx}>
                       <h4 className="font-semibold text-gray-100">{edu.degree}</h4>
-                      <p className="text-gray-400 text-sm">
+                      <p className="text-teal-600 text-sm">
                         {edu.institution} | {edu.duration}
                       </p>
                     </div>

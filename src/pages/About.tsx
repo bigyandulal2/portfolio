@@ -76,7 +76,7 @@ const About: React.FC = () => {
         >
           <motion.button
             onClick={() => navigate('/')}
-            className={`flex items-center gap-2 ${TEXT_COLOR_DIM}  transition-colors p-3  focus:outline-none focus:ring-2 focus:ring-gray-400`}
+            className={`flex items-center gap-2   transition-colors p-3  focus:outline-none hover:text-pink-500`}
             whileHover={{ x: -8 }}
           >
             <FiArrowLeft className="w-5 h-5" />
@@ -85,10 +85,10 @@ const About: React.FC = () => {
 
           <motion.button
             onClick={() => navigate('/projects')}
-            className={`flex items-center gap-2 ${TEXT_COLOR_DIM} hover:${TEXT_COLOR_LIGHT} transition-colors p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400`}
+            className={`flex items-center gap-2  transition-colors p-3 rounded-md focus:outline-none`}
             whileHover={{ x: 8 }}
           >
-            <span className="text-base font-semibold">Projects</span>
+            <span className="text-base font-semibold hover:text-pink-500">Projects</span>
             <FiArrowRight className="w-5 h-5" />
           </motion.button>
         </motion.nav>
@@ -208,7 +208,7 @@ const About: React.FC = () => {
             {/* Explore My Work */}
             <motion.button
               onClick={() => navigate('/projects')}
-              className={`inline-flex items-center gap-3 px-10 py-5 ${ACCENT_COLOR_RED_BG} ${TEXT_COLOR_LIGHT} font-semibold text-lg rounded-full shadow-2xl ${ACCENT_COLOR_RED_HOVER_BG} transition-all focus:outline-none focus:ring-4 focus:ring-rose-400 focus:ring-opacity-50`}
+              className={`inline-flex items-center gap-3 px-10 py-5 bg-pink-500 ${TEXT_COLOR_LIGHT} font-semibold text-lg rounded-full shadow-2xl  transition-all focus:outline-none focus:ring-4 focus:ring-rose-400 focus:ring-opacity-50`}
               whileHover={{ scale: 1.05, boxShadow: '0 12px 24px rgba(244, 63, 94, 0.5)' }}
               whileTap={{ scale: 0.95 }}
             >

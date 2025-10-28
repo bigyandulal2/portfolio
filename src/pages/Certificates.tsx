@@ -63,7 +63,7 @@ const Certificates: React.FC = () => {
         >
           <motion.button
             onClick={() => navigate('/about')}
-            className={`flex items-center hover:text-pink-500 gap-2 ${TEXT_COLOR_DIM} hover:${TEXT_COLOR_LIGHT} transition-colors p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400`}
+            className={`flex items-center hover:text-pink-500 gap-2 ${TEXT_COLOR_DIM} hover:${TEXT_COLOR_LIGHT} transition-colors p-3 rounded-md`}
             whileHover={{ x: -8 }}
           >
             <FiArrowLeft className="w-5 h-5" />
@@ -72,7 +72,7 @@ const Certificates: React.FC = () => {
 
           <motion.button
             onClick={() => navigate('/projects')}
-            className={`flex items-center gap-2 hover:text-pink-500 ${TEXT_COLOR_DIM} hover:${TEXT_COLOR_LIGHT} transition-colors p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400`}
+            className={`flex items-center gap-2 hover:text-pink-500  transition-colors p-3 rounded-md focus:outline-none`}
             whileHover={{ x: 8 }}
           >
             <span className="text-base font-semibold ">Projects</span>
