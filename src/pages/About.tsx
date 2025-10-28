@@ -15,7 +15,7 @@ import { useNavigate } from 'react-router-dom';
 const PRIMARY_BG_COLOR = 'bg-gradient-to-br from-teal-800 to-teal-900';
 const TEXT_COLOR_LIGHT = 'text-white';
 const TEXT_COLOR_DIM = 'text-gray-300';
-const ACCENT_COLOR_RED = 'text-rose-500';
+const ACCENT_COLOR_RED = 'text-pink-500';
 const ACCENT_COLOR_RED_BG = 'bg-rose-500';
 const ACCENT_COLOR_RED_HOVER_BG = 'hover:bg-rose-600';
 

@@ -110,7 +110,7 @@ const Contact = () => {
               className="text-center mb-10"
             >
               <h1 className="text-3xl md:text-5xl font-bold mb-4">
-                Let's Work <span className="text-indigo-500">Together</span>
+                Let's Work <span className="text-pink-500">Together</span>
               </h1>
               <p className="text-lg text-gray-300 max-w-2xl mx-auto">
                 Have a project in mind? I'd love to hear about it. Send me a message and let's create something amazing.
@@ -140,7 +140,7 @@ const Contact = () => {
                           onChange={handleChange}
                           required
                           placeholder={placeholder}
-                          className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-xl focus:outline-none focus:border-indigo-500 transition-colors text-gray-100 placeholder-gray-500"
+                          className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-xl focus:outline-none focus:border-indigo-500  text-white"
                         />
                       </div>
                     ))}
@@ -163,7 +163,7 @@ const Contact = () => {
                       disabled={isSending}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="w-full px-8 py-4 bg-indigo-600 text-white rounded-full font-semibold text-lg flex items-center justify-center gap-2 shadow-lg hover:bg-indigo-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full px-8 py-4 bg-pink-500 text-white rounded-full font-semibold text-lg flex items-center justify-center gap-2 shadow-lg hover:bg-pink-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {isSending ? "Sending..." : "Send Message"} <FiSend />
                     </motion.button>
@@ -180,7 +180,7 @@ const Contact = () => {
               >
                 {/* Quick Contact Card */}
                 <div className="bg-gray-800 border border-gray-700 rounded-3xl p-8 shadow-lg hover:border-indigo-500 transition-colors">
-                  <h3 className="text-2xl font-bold mb-6 text-indigo-500">Get in Touch</h3>
+                  <h3 className="text-2xl font-bold mb-6 text-pink-500">Get in Touch</h3>
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-indigo-600/20 rounded-full flex items-center justify-center text-indigo-400">
                       <FiMail className="text-xl" />
@@ -194,7 +194,7 @@ const Contact = () => {
 
                 {/* Social Links Card */}
                 <div className="bg-gray-800 border border-gray-700 rounded-3xl p-8 shadow-lg hover:border-indigo-500 transition-colors">
-                  <h3 className="text-2xl font-bold mb-6 text-indigo-500">Follow Me</h3>
+                  <h3 className="text-2xl font-bold mb-6 text-pink-500">Follow Me</h3>
                   <div className="grid grid-cols-2 gap-4">
                     {socialLinks.map(({ Icon, href, label }, index) => (
                       <motion.a

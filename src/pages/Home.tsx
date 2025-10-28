@@ -31,17 +31,17 @@ const Home = () => {
           ))}
         </div>
 
-        <div className="container mx-auto px-6 py-20 relative z-10">
+        <div className="container mx-auto px-6 py-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
-              className="mb-8"
+              className="mb-4"
             >
               <div className="inline-block">
                 <motion.div
-                  className="text-lg font-medium text-yellow-600 mb-4  uppercase"
+                  className="text-lg font-medium text-yellow-600 mb-2  uppercase"
                   animate={{ opacity: [0.5, 1, 0.5] }}
                   transition={{ duration: 3, repeat: Infinity }}
                 >
@@ -57,7 +57,7 @@ const Home = () => {
               className="text-6xl md:text-8xl lg:text-9xl font-display font-bold mb-6 leading-none"
             >
               <span className="block">Hi, I'm</span>
-              <span className="text-rose-700 block mt-2">Bigyan Dulal</span>
+              <span className="text-pink-500 block mt-2">Bigyan Dulal</span>
             </motion.h1>
 
             <motion.p
@@ -77,7 +77,7 @@ const Home = () => {
             >
               <Link to="/about">
                 <motion.button
-                  className="group px-8 py-4 bg-rose-500 text-primary-foreground rounded-full font-semibold text-lg inline-flex items-center gap-3 overflow-hidden relative"
+                  className="group px-8 py-4 bg-pink-500 text-primary-foreground rounded-full font-semibold text-lg inline-flex items-center gap-3 overflow-hidden relative"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
