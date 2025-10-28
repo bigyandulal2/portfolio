@@ -124,7 +124,7 @@ const Contact = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                <div className="bg-gray-800 border border-gray-700 rounded-3xl p-6 shadow-xl">
+                <div className="bg-black/20 border border-gray-700 rounded-3xl p-6 shadow-xl">
                   <form onSubmit={handleSubmit} className="space-y-6">
                     {[
                       { label: "Your Name", type: "text", placeholder: "Peter Parker", name: "name" },
@@ -132,7 +132,7 @@ const Contact = () => {
                       { label: "Subject", type: "text", placeholder: "Project Inquiry", name: "subject" },
                     ].map(({ label, type, placeholder, name }) => (
                       <div key={label}>
-                        <label className="block text-sm font-semibold mb-2 text-gray-200">{label}</label>
+                        <label className="block text-sm font-semibold mb-2 text-pink-500">{label}</label>
                         <input
                           type={type}
                           name={name}
@@ -140,13 +140,13 @@ const Contact = () => {
                           onChange={handleChange}
                           required
                           placeholder={placeholder}
-                          className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-xl focus:outline-none focus:border-indigo-500  text-white"
+                          className="w-full px-4 py-3 bg-black/10 border border-gray-700 rounded-xl focus:outline-none focus:border-pink-500  text-white"
                         />
                       </div>
                     ))}
 
                     <div>
-                      <label className="block text-sm font-semibold mb-2 text-gray-200">Message</label>
+                      <label className="block text-sm font-semibold mb-2 text-pink-500">Message</label>
                       <textarea
                         rows={6}
                         name="message"
@@ -154,7 +154,7 @@ const Contact = () => {
                         onChange={handleChange}
                         required
                         placeholder="Tell me about your project..."
-                        className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-xl focus:outline-none focus:border-indigo-500 transition-colors resize-none text-gray-100 placeholder-gray-500"
+                        className="w-full px-4 py-3  border border-gray-800 rounded-xl focus:outline-none focus:border-pink-500  resize-none bg-black/10"
                       />
                     </div>
 
@@ -179,21 +179,21 @@ const Contact = () => {
                 className="space-y-8"
               >
                 {/* Quick Contact Card */}
-                <div className="bg-gray-800 border border-gray-700 rounded-3xl p-8 shadow-lg hover:border-pink-500 transition-colors">
+                <div className="bg-black/20 border border-gray-700 rounded-3xl p-8 shadow-lg hover:border-pink-500 transition-colors">
                   <h3 className="text-2xl font-bold mb-6 text-pink-500">Get in Touch</h3>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-indigo-600/20 rounded-full flex items-center justify-center text-indigo-400">
-                      <FiMail className="text-xl" />
+                    <div className="w-12 h-12  flex items-center justify-center rounded-full bg-black/10 text-indigo-400">
+                      <FiMail className="text-xl text-white" />
                     </div>
-                    <div>
-                      <div className="text-sm text-gray-400">Email</div>
+                    <div className="flex justify-center items-center gap-2">
+                      <div className="text-sm text-white">Email</div>
                       <div className="font-medium text-gray-100">rdravid569@gmail.com</div>
                     </div>
                   </div>
                 </div>
 
                 {/* Social Links Card */}
-                <div className="bg-gray-800 border border-gray-700 rounded-3xl p-8 shadow-lg hover:border-pink-500 transition-colors">
+                <div className="bg-black/20 border border-gray-700 rounded-3xl p-8 shadow-lg hover:border-pink-500">
                   <h3 className="text-2xl font-bold mb-6 text-pink-500">Follow Me</h3>
                   <div className="grid grid-cols-2 gap-4">
                     {socialLinks.map(({ Icon, href, label }, index) => (
@@ -207,7 +207,7 @@ const Contact = () => {
                         transition={{ duration: 0.4, delay: 0.6 + index * 0.1 }}
                         whileHover={{ scale: 1.05, y: -5 }}
                         whileTap={{ scale: 0.95 }}
-                        className="flex items-center gap-3 p-4 bg-gray-900 border border-gray-700 rounded-xl hover:border-indigo-500 transition-colors text-gray-100"
+                        className="flex items-center gap-3 p-4 bg-black/10 border border-gray-700 rounded-xl hover:border-pink-500 transition-colors text-gray-100"
                       >
                         <Icon className="text-2xl" />
                         <span className="font-medium">{label}</span>

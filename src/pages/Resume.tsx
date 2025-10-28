@@ -92,7 +92,7 @@ const Resume = () => {
               className="space-y-8"
             >
               {/* Profile */}
-              <div className="bg-gray-800 p-6 rounded-3xl shadow-lg">
+              <div className="bg-black/20 p-6 rounded-3xl shadow-lg">
                 <h3 className="text-xl font-bold mb-4 text-pink-500">Profile</h3>
                 <p className="text-gray-300">
                   Passionate Frontend Developer with experience in building responsive and interactive web applications using React, TypeScript, and Tailwind CSS.
@@ -100,7 +100,7 @@ const Resume = () => {
               </div>
 
               {/* Skills */}
-              <div className="bg-gray-800 p-6 rounded-3xl shadow-lg">
+              <div className="bg-black/20 p-6 rounded-3xl shadow-lg">
                 <h3 className="text-xl font-bold mb-4 text-pink-500">Skills</h3>
                 <ul className="text-gray-300 list-disc list-inside space-y-1">
                   <li>React, Next.js, TypeScript</li>
@@ -112,7 +112,7 @@ const Resume = () => {
               </div>
 
               {/* Social Links */}
-              <div className="bg-gray-800 p-6 rounded-3xl shadow-lg">
+              <div className="bg-black/20 p-6 rounded-3xl shadow-lg">
                 <h3 className="text-xl font-bold mb-4 text-pink-500">Connect</h3>
                 <div className="flex flex-col gap-3">
                   {socialLinks.map(({ Icon, href, label }) => (
@@ -121,7 +121,7 @@ const Resume = () => {
                       href={href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-3 p-3 bg-gray-900 rounded-xl border hover:border-pink-500 transition-colors text-blue-100"
+                      className="flex items-center gap-3 p-3 bg-black/10 rounded-xl border hover:border-pink-500 transition-colors text-blue-100"
                     >
                       <Icon className="text-2xl" />
                       {label}
@@ -139,13 +139,13 @@ const Resume = () => {
               className="lg:col-span-2 space-y-8"
             >
               {/* Experience */}
-              <div className="bg-gray-800 p-6 rounded-3xl shadow-lg">
+              <div className="bg-black/20 p-6 rounded-3xl shadow-lg">
                 <h3 className="text-xl font-bold mb-6 text-pink-500">Experience</h3>
                 <div className="space-y-6">
                   {experiences.map((exp, idx) => (
                     <div key={idx}>
                       <h4 className="font-semibold text-gray-100">{exp.title}</h4>
-                      <p className="text-gray-400 text-sm">
+                      <p className="text-teal-600 text-sm">
                         {exp.company} | {exp.duration}
                       </p>
                       <ul className="text-gray-300 list-disc list-inside mt-2 space-y-1">
@@ -172,7 +172,7 @@ const Resume = () => {
               </div>
 
               {/* Education */}
-              <div className="bg-gray-800 p-6 rounded-3xl shadow-lg">
+              <div className="bg-black/20 p-6 rounded-3xl shadow-lg">
                 <h3 className="text-xl font-bold mb-6 text-pink-500">Education</h3>
                 <div className="space-y-4">
                   {education.map((edu, idx) => (
