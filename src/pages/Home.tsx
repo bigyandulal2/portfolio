@@ -1,0 +1,170 @@
+import { motion } from 'framer-motion';
+import { FiArrowRight, FiLinkedin, FiMail } from 'react-icons/fi';
+import { FaGithub } from "react-icons/fa";
+import { Link } from 'react-router-dom';
+import PageTransition from '@/components/PageTransition';
+
+const Home = () => {
+  return (
+    <PageTransition>
+      <div className="min-h-screen flex items-center justify-center bg-teal-900  relative overflow-hidden">
+        {/* Ambient particles */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {[...Array(20)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-1 h-1  rounded-full"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+              }}
+              animate={{
+                y: [0, -30, 0],
+                opacity: [0.2, 0.5, 0.2],
+              }}
+              transition={{
+                duration: 3 + Math.random() * 2,
+                repeat: Infinity,
+                delay: Math.random() * 2,
+              }}
+            />
+          ))}
+        </div>
+
+        <div className="container mx-auto px-6 py-20 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="mb-8"
+            >
+              <div className="inline-block">
+                <motion.div
+                  className="text-lg font-medium text-yellow-600 mb-4  uppercase"
+                  animate={{ opacity: [0.5, 1, 0.5] }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                >
+                  Welcome to my world
+                </motion.div>
+              </div>
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.4 }}
+              className="text-6xl md:text-8xl lg:text-9xl font-display font-bold mb-6 leading-none"
+            >
+              <span className="block">Hi, I'm</span>
+              <span className="text-rose-700 block mt-2">Bigyan Dulal</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.6 }}
+              className="text-2xl md:text-3xl text-gray-200 mb-12 font-light"
+            >
+              FullStack Developer 
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.8 }}
+              className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16"
+            >
+              <Link to="/about">
+                <motion.button
+                  className="group px-8 py-4 bg-rose-500 text-primary-foreground rounded-full font-semibold text-lg inline-flex items-center gap-3 overflow-hidden relative"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <span className="relative z-10">Explore My Story</span>
+                  <motion.div
+                    className="relative z-10"
+                    animate={{ x: [0, 5, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                  >
+                    <FiArrowRight />
+                  </motion.div>
+                  <motion.div
+                    className="absolute inset-0 bg-accent"
+                    initial={{ x: '-100%' }}
+                    whileHover={{ x: 0 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </motion.button>
+              </Link>
+
+              <Link to="/contact">
+                <motion.button
+                  className="px-8 py-4 bg-white text-rose-500   rounded-full font-semibold text-lg   transition-all"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Let's Connect
+                </motion.button>
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 1 }}
+              className="flex items-center justify-center gap-6"
+            >
+              {[
+                { Icon: FaGithub, href: 'https://github.com/bigyandulal2', label: 'github',css:"bg-white text-black" },
+                { Icon: FiLinkedin, href: 'https://www.linkedin.com/in/bigyan-dulal-84548b302/', label: 'LinkedIn',css:"bg-blue-600 text-white" },
+                { Icon: FiMail, href: 'mailto:rdravid569@gmail.com', label: 'Email',css:"bg-white text-red-600" },
+              ].map(({ Icon, href, label,css }) => {
+                  
+                return <motion.a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={` w-12 h-12 flex items-center justify-center ${css} border border-border rounded-full text-xl hover:border-primary  transition-all`}
+                  whileHover={{ scale: 1.1, y: -5 }}
+                  whileTap={{ scale: 0.9 }}
+                  aria-label={label}
+                >
+                  <Icon size={30} />
+                </motion.a>
+})}
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Scroll indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1.2 }}
+          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+        >
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="text-muted-foreground text-sm"
+          >
+            <div className="flex flex-col items-center gap-2">
+              <span className="text-xs uppercase tracking-widest">Scroll to explore</span>
+              <div className="w-6 h-10 border-2 border-current rounded-full flex items-start justify-center p-2">
+                <motion.div
+                  className="w-1 h-2 bg-current rounded-full"
+                  animate={{ y: [0, 12, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                />
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      </div>
+    </PageTransition>
+  );
+};
+
+export default Home;
