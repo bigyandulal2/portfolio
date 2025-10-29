@@ -62,7 +62,7 @@ const Resume = () => {
               </motion.button>
             </Link>
             <a
-              href="/resume.pdf" // replace with your actual resume PDF
+              href="https://drive.google.com/file/d/1kz-EZCWwobGW24Nl3D6F6qlOACPeypc9/view?usp=drive_link" // replace with your actual resume PDF
               download
               className="flex items-center gap-2 text-gray-200 hover:text-pink-500 transition-all"
             >
