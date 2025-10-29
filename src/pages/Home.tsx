@@ -3,6 +3,7 @@ import { FiArrowRight, FiLinkedin, FiMail } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import PageTransition from '@/components/PageTransition';
 import { FiGithub } from "react-icons/fi";
+import Copyright from '@/components/ui/copyright';
 const Home = () => {
   return (
     <PageTransition>
@@ -140,6 +141,7 @@ const Home = () => {
 
         {/* Scroll indicator */}
       </div>
+      <Copyright/>
     </PageTransition>
   );
 };
