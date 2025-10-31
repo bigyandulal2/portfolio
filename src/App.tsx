@@ -37,7 +37,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <HashRouter basename="/portfolio">
+      <HashRouter basename="/">
         <AnimatedRoutes />
       </HashRouter>
     </TooltipProvider>
