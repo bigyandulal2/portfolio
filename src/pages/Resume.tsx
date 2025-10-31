@@ -38,7 +38,7 @@ const Resume = () => {
   ];
 
   const education = [
-    { degree: "B.Sc. in Computer Science & Information Technology", institution: "Tribhuvan University", duration: "2019 - 2023" },
+    { degree: "B.Sc. in Computer Science & Information Technology", institution: "Tribhuvan University", duration: "2022 - present" },
     { degree: "High School", institution: "Panchayat College", duration: "2017 - 2020" },
   ];
 
